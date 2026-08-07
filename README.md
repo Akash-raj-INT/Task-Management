@@ -66,6 +66,8 @@ npm run dev                # http://localhost:3000
 
 1. **Backend:** deploy `backend/` to Render or Railway (both have a free Node.js tier). Set
    `JWT_SECRET`, `FRONTEND_URL`, and (optionally) `DB_PATH` as environment variables.
+   If you deploy the backend as a serverless function, use a writable temp path like
+   `DB_PATH=/tmp/task-manager.sqlite`.
 2. **Frontend:** deploy `frontend/` to Vercel. Set `NEXT_PUBLIC_API_URL` to your deployed
    backend's `/api` URL.
 3. Push this repo to a **public GitHub repository** with multiple small commits (see suggested

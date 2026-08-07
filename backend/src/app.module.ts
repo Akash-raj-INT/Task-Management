@@ -11,7 +11,9 @@ import { Task } from './tasks/task.entity';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: process.env.DB_PATH || 'task-manager.sqlite',
+      database:
+        process.env.DB_PATH ||
+        (process.env.VERCEL ? '/tmp/task-manager.sqlite' : 'task-manager.sqlite'),
       entities: [User, Task],
       synchronize: true, // fine for this assessment; use migrations in real production
     }),
