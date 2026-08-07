@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors stored as "R G B" triplets so Tailwind's rgb(var(--x) / <alpha>) can add opacity */
+:root {
+  --bg: 246 247 251;
+  --surface: 255 255 255;
+  --surface-hover: 240 241 247;
+  --border: 230 232 240;
+  --text: 18 20 28;
+  --muted: 107 114 128;
+  --accent: 79 70 229;
+  --accent-soft: 238 240 254;
+  --priority-high: 244 63 94;
+  --priority-medium: 245 158 11;
+  --priority-low: 16 185 129;
+}
+
+[data-theme='dark'] {
+  --bg: 13 15 20;
+  --surface: 23 25 35;
+  --surface-hover: 30 33 45;
+  --border: 38 42 53;
+  --text: 243 244 246;
+  --muted: 156 163 175;
+  --accent: 129 140 248;
+  --accent-soft: 31 33 64;
+  --priority-high: 251 113 133;
+  --priority-medium: 251 191 36;
+  --priority-low: 52 211 153;
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Signature element: pennant-shaped priority tag */
+.pennant {
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
