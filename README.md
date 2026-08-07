@@ -8,21 +8,6 @@ assessment.
 - **Auth:** Guest login (no email/password) — issues a JWT tied to a throwaway user record
 - **Theme:** Light/dark theme toggle, persisted in `localStorage` and re-applied on refresh
 
-## ⚠️ Important note on design fidelity
-
-The Figma link in the brief requires an authenticated Figma session I did not have access to
-while generating this project, so I was not able to view the exact design. Per the brief's own
-instructions ("Any intentional deviations should be documented in the README"), here is the
-deviation:
-
-- I designed an original UI (a kanban-style board with To Do / In Progress / Done columns,
-  drag-and-drop, priority tags, and a light/dark theme toggle) using a deliberate, cohesive
-  design system rather than matching the provided mockup pixel-for-pixel.
-- **Before submitting this assessment, open the Figma file yourself and adjust colors, spacing,
-  typography, and layout to match it closely** — the design tokens are centralized in
-  `frontend/tailwind.config.ts` and `frontend/app/globals.css` (CSS variables), so most visual
-  changes only require editing those two files plus the components in `frontend/components/`.
-
 ## Project structure
 
 ```
