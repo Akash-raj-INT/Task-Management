@@ -7,7 +7,7 @@
     },
     "backend": {
       "root": "backend/",
-      "runtime": "nodejs",
+      "framework": "node",
       "buildCommand": "npm run build",
       "entrypoint": "dist/main.js"
     }
