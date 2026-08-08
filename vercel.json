@@ -2,12 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
     "frontend": {
-      "root": "frontend/",
+      "root": "frontend",
       "framework": "nextjs"
     },
     "backend": {
-      "root": "backend/",
-      "framework": "node",
+      "root": "backend",
+      "installCommand": "npm install --include=dev",
       "buildCommand": "npm run build",
       "entrypoint": "dist/main.js"
     }
