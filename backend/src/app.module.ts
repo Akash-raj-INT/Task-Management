@@ -13,7 +13,9 @@ import { Task } from './tasks/task.entity';
       type: 'sqlite',
       database:
         process.env.DB_PATH ||
-        (process.env.VERCEL ? '/tmp/task-manager.sqlite' : 'task-manager.sqlite'),
+        (process.env.VERCEL || process.env.NODE_ENV === 'production'
+          ? '/tmp/task-manager.sqlite'
+          : 'task-manager.sqlite'),
       entities: [User, Task],
       synchronize: true, // fine for this assessment; use migrations in real production
     }),
